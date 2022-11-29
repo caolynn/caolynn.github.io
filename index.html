@@ -27,19 +27,37 @@
 </head>
 <body>
 	<script>
-		document.ontouchstart = function(){
-			if (typeof DeviceMotionEvent.requestPermission === 'function') {
-		        DeviceMotionEvent.requestPermission().then((permissionState) => {
-		            if (permissionState === 'granted') {
-		                window.addEventListener('devicemotion', () => {});
-		            }
-		        }).catch((error) => {
-		            alert(error)
-		        })
-		    } else {
-		          // 处理常规的非iOS 13+设备
-		        console.log("处理常规的非iOS 13+设备")
-		    }
+		// document.ontouchstart = function(){
+		// 	if (typeof DeviceMotionEvent.requestPermission === 'function') {
+		//         DeviceMotionEvent.requestPermission().then((permissionState) => {
+		//             if (permissionState === 'granted') {
+		//                 window.addEventListener('devicemotion', () => {});
+		//             }
+		//         }).catch((error) => {
+		//             alert(error)
+		//         })
+		//     } else {
+		//           // 处理常规的非iOS 13+设备
+		//         console.log("处理常规的非iOS 13+设备")
+		//     }
+        $('.btn').on('click', function() {
+            if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+            DeviceOrientationEvent.requestPermission()
+                .then(permissionState => {
+                if (permissionState === 'granted') {
+                    // handle data
+                } else {
+                    // handle denied
+                }
+                })
+                .catch((err) => {
+                    console.log(err)
+                });
+            } else {
+            // han
+            console.log(typeof DeviceOrientationEvent)
+            }
+        })
 	</script>
     <div class="container">
         <h1>恭喜, 站点创建成功！</h1>
