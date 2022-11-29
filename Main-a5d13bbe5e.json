@@ -1,0 +1,1 @@
+{"type":"Scene","props":{"width":750,"runtime":"script/Gyroscope_Sample.ts","height":1334},"compId":2,"child":[{"type":"Text","props":{"y":316,"x":160,"width":449,"var":"test_test","text":"text","height":420,"fontSize":50,"color":"#ffffff","runtime":"Laya.Text"},"compId":4}],"loadList":[],"loadList3D":[]}
